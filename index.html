@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración</title>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">  
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Estilos extra para las tarjetas → aquí para no tocar el CSS externo -->
+    <style>
+      .ticket-box{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.5rem;}
+      .ticket-title{font-size:1.1rem;font-weight:600;}
+      .ticket-count{font-size:2.2rem;font-weight:700;}
+    </style>
+</head>
+<body>
+    <div class="admin-panel">
+        <!-- Menú lateral -->
+        <nav class="side-menu">
+            <div class="menu-header">
+                <h1 class="company-name">BrowneHub</h1>
+                <button class="menu-toggle js-toggle-menu" aria-label="Toggle menu">
+                    <span class="menu-toggle-line"></span>
+                    <span class="menu-toggle-line"></span>
+                    <span class="menu-toggle-line"></span>
+                </button>
+            </div>
+            
+            <div class="menu-content">
+                <ul class="menu-list">
+                    <li class="menu-item"><a href="#" class="menu-link">Dashboard</a></li>
+                    <li class="menu-item"><a href="#" class="menu-link">Account</a></li>
+                    
+                    <li class="menu-section-title">Line Break Heading</li>
+                    
+                    <li class="menu-item"><a href="#" class="menu-link">Dashboard</a></li>
+                    <li class="menu-item"><a href="#" class="menu-link">Dashboard</a></li>
+                    
+                    <li class="menu-dropdown">
+                        <button class="dropdown-toggle">Dropdown</button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" class="menu-link">Dropdown Item</a></li>
+                            <li><a href="#" class="menu-link">Dropdown Item</a></li>
+                            <li><a href="#" class="menu-link">Dropdown Item</a></li>
+                            <li><a href="#" class="menu-link">Dropdown Item</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="menu-item"><a href="#" class="menu-link">Dashboard</a></li>
+                    
+                    <li class="menu-dropdown">
+                        <button class="dropdown-toggle">Dropdown</button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" class="menu-link">Dashboard</a></li>
+                            <li><a href="#" class="menu-link">Dashboard</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="menu-section-title">Legal Section</li>
+                    
+                    <li class="menu-dropdown">
+                        <button class="dropdown-toggle">Documents</button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" class="menu-link">Contract</a></li>
+                            <li><a href="#" class="menu-link">Employee Handbook</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item"><a href="#" class="menu-link">Terms & Conditions</a></li>
+                    <li class="menu-item"><a href="#" class="menu-link">Copyright Details</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Contenido principal -->
+        <main class="main-content">
+            <header class="content-header">
+                <p class="user-greeting"><span id="time"></span> Daniel Morales Agente Contingencia</p>
+                <a href="#" class="logout-button">Logout</a>
+            </header>
+            
+            <section class="content-body">
+                <div class="page-header">
+                    <h2 class="page-title">Mi Ticketera</h2>
+                    <div class="page-actions">
+                        <button class="btn action-btn bg-orange">Nuevo Ticket</button>
+                    </div>
+                </div>
+
+                <!-- Tabs -->
+                <div class="tab-section">
+                    <h3 class="tab-section-title">Estado de tickets</h3>
+                    <div class="tab-navigation">
+                        <button class="tab-button active" data-tab="mis">Mis tickets</button>
+                        <button class="tab-button" data-tab="pendientes">Pendientes</button>
+                        <button class="tab-button" data-tab="realizados">Realizados</button>
+                        <button class="tab-button" data-tab="rechazados">Rechazados</button>
+                    </div>
+
+                    <!-- Contenedor dinámico -->
+                    <div class="tab-content">
+                        <!-- Mis tickets -->
+                        <section class="tab-panel" data-tab="mis">
+                          <!-- Grid contenedor -->
+                          <div class="tickets-grid">
+                              <div class="ticket-box div1">
+                                  <span class="ticket-title">Tickets totales</span>
+                                  <span class="ticket-count" id="count-totales">18654</span>
+                              </div>
+                              <div class="ticket-box div2">
+                                  <span class="ticket-title">Tickets cerrados</span>
+                                  <span class="ticket-count" id="count-cerrados">13154</span>
+                              </div>
+                              <div class="ticket-box div3">
+                                  <span class="ticket-title">Tickets rechazados</span>
+                                  <span class="ticket-count" id="count-rechazados">945</span>
+                              </div>
+                              <div class="ticket-box div4">
+                                  <span class="ticket-title">Tickets pendientes</span>
+                                  <span class="ticket-count" id="count-pendientes">617</span>
+                              </div>
+                              <div class="ticket-box div5">
+                                  <span class="ticket-title">Tickets abiertos</span>
+                                  <span class="ticket-count" id="count-abiertos">578</span>
+                              </div>
+                              <div class="ticket-box div6">
+                                  <span class="ticket-title">Tickets en cola</span>
+                                  <span class="ticket-count" id="count-cola">119</span>
+                              </div>
+                          </div>
+                        </section>
+
+                        <!-- Paneles restantes -->
+                        <section class="tab-panel" data-tab="pendientes" hidden></section>
+                        <section class="tab-panel" data-tab="realizados" hidden></section>
+                        <section class="tab-panel" data-tab="rechazados" hidden></section>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- JS -->
+    <script src="js/app.js" defer></script>
+</body>
+</html>
