@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="https://cdn.lordicon.com/lordicon-1.2.0.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <link rel="stylesheet" href="loggin.css">
+    <title>Inicio de Sesión</title>
+</head>
+<body>
+    <div class="container">
+        <div class="login-column">
+            <form id="loginForm">
+                <div class="input-container">
+                    <label for="username">Usuario</label>
+                    <div class="input-with-icon">
+                        <lord-icon
+                            src="https://cdn.lordicon.com/bgebyztw.json"
+                            trigger="hover"
+                            colors="primary:#ffffff,secondary:#ffffff"
+                            tyle="width:25px;height:25px">
+                        </lord-icon>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <label for="password">Contraseña</label>
+                    <div class="input-with-icon">
+                        <lord-icon
+                            src="https://cdn.lordicon.com/ppsqwkvn.json"
+                            trigger="hover"
+                            colors="primary:#ffffff,secondary:#ffffff"
+                            tyle="width:25px;height:25px">
+                        </lord-icon>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <label for="organization">Empresa</label>
+                    <div class="input-with-icon">
+                        <lord-icon
+                            src="https://cdn.lordicon.com/rdfmytjv.json"
+                            trigger="hover"
+                            stroke="bold"
+                            colors="primary:#ffffff,secondary:#ffffff"
+                            style="width:25px;height:25px">
+                        </lord-icon>
+                        <input type="text" id="organization" name="organization" required>
+                    </div>
+                </div>
+
+                <button type="submit">Ingresar</button>
+            </form>
+        </div>
+
+        <div class="video-column">
+            <!-- Video -->
+            <video width="100%" height="100%" autoplay loop muted>
+                <source src="img/intra.mp4" type="video/mp4">
+                Tu navegador no soporta el tag de video.
+            </video>
+        </div>
+    </div>
+    <script src="login.js"></script>
+</body>
+</html>
